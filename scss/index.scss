@@ -1,0 +1,106 @@
+@use 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.transition-container {
+  transition: visibility 500ms ease-in-out;
+  visibility: hidden;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  &.open {
+    visibility: visible;
+  }
+
+  svg path {
+    transition: all 500ms ease-in-out;
+  }
+}
+
+
+.transition-container .transition-content {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  clip-path: url(#myPathClip);
+  background-color: variables.$primary-color;
+  display: grid;
+  place-items: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+
+  h1 {
+    color: white;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font: variables.$font-w-eb variables.$font-l var(--font-outfit);
+  color: variables.$text-color-dark;
+}
+
+h2 {
+  font: variables.$font-w-eb variables.$font-m var(--font-outfit);
+  color: variables.$text-color-dark;
+}
+
+footer {
+  font: variables.$font-w-r variables.$font-s var(--font-outfit);
+  text-align: center;
+  padding: 15px;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(variables.$gradient-color-1, variables.$gradient-color-2);
+  padding: 120px 5%;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  width: max-content;
+  padding: 5px 15px;
+  color: variables.$text-color-dark;
+  border-radius: 15px;
+  font: variables.$font-w-r variables.$font-s var(--font-outfit);
+  background-color: lightgray;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.section-description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: variables.$text-color-dark;
+  border-radius: 15px;
+  font: variables.$font-w-r variables.$font-s var(--font-outfit);
+}
+
+img.me {
+  box-sizing: border-box;
+  border: 10px solid transparent;
+  box-shadow: 20px 20px 0px 0px #DDD;
+}

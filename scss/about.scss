@@ -1,0 +1,47 @@
+@use "variables";
+
+#about {
+  .container {
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+
+      .about-me {
+        font: variables.$font-w-r variables.$font-s var(--font-outfit);
+        color: variables.$text-color-dark;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .quick-abouts {
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: 10px;
+          margin: 0 15px;
+        }
+      }
+
+      .photo {
+        display: grid;
+        place-items: start center;
+        position: relative;
+
+        img {
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    .container {
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

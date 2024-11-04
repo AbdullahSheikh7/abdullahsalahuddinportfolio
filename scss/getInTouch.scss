@@ -1,0 +1,39 @@
+@use "variables";
+
+#get-in-touch {
+  .container {
+    .content {
+      display: grid;
+      place-items: center;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font: variables.$font-w-b variables.$font-m var(--font-outfit);
+        color: variables.$text-color-dark;
+
+        button {
+          color: variables.$text-color-dark;
+          font: variables.$font-w-b variables.$font-m var(--font-outfit);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #get-in-touch {
+    .container {
+      .content {
+        div {
+          gap: 5px;
+
+          * {
+            font: variables.$font-w-b variables.$font-m/1.5 var(--font-outfit);
+          }
+        }
+      }
+    }
+  }
+}
