@@ -36,9 +36,11 @@ const Navbar = () => {
               <li><Link to={"/#work"}>Work</Link></li>
               <li><Link to={"/contact"}>Contact</Link></li>
             </ul>
-            <button className="btn btn-filled" id="download-cv">
-              Download CV
-            </button>
+            <a href="https://abdullah-salahudidn.vercel.app/cv" target="_blank" rel="noopener noreferrer">
+              <button className="btn btn-filled" id="download-cv">
+                Download CV
+              </button>
+            </a>
           </div>
           <button className="btn btn-transparent" id="show-menu" onClick={menuHandler}>
             {menu ? <RxCross2 style={{ pointerEvents: "none" }} /> : <IoMdMenu style={{ pointerEvents: "none" }} />}
