@@ -18,6 +18,10 @@
     outline: none;
     transition: border-color 200ms linear;
 
+    &:disabled {
+      color: lighten($color: variables.$text-color-dark, $amount: 50) !important;
+    }
+
     /* Focused */
     &:focus {
       border-color: variables.$primary-color;
@@ -33,7 +37,8 @@
   }
 
   /* Filled */
-  &.filled input {
+  &.filled input,
+  &.filled textarea {
     border-color: variables.$primary-color;
   }
 
@@ -58,6 +63,7 @@
 
   .placeholder {
     position: absolute;
+    pointer-events: none;
     z-index: 1;
     font: 14pt Outfit;
     color: gray;

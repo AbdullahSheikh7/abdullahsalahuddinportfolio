@@ -31,9 +31,9 @@ const Navbar = () => {
           <Link to={"/"}><div className="logo">Abdullah.</div></Link>
           <div className={`right ${menu ? "open" : "close"}`}>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#work">Work</a></li>
+              <li><Link to={"/#about"}>About</Link></li>
+              <li><Link to={"/#skills"}>Skills</Link></li>
+              <li><Link to={"/#work"}>Work</Link></li>
               <li><Link to={"/contact"}>Contact</Link></li>
             </ul>
             <button className="btn btn-filled" id="download-cv">

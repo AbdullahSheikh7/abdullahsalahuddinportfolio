@@ -41,6 +41,9 @@ header {
             a {
             color: variables.$text-color-dark;
             }
+            &.active a {
+              color: variables.$primary-color;
+            }
           }
         }
       }

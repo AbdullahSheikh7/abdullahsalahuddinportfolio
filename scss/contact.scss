@@ -4,8 +4,6 @@ main {
   background: radial-gradient(variables.$gradient-color-1, variables.$gradient-color-2);
   display: grid;
   place-items: center;
-  height: 100dvh;
-
 
   .contact-form {
     width: 50%;
@@ -13,7 +11,7 @@ main {
     font: variables.$font-w-r variables.$font-s var(--font-outfit);
     color: variables.$text-color-dark;
     margin: 0 auto;
-    padding: 20px;
+    padding: 120px 20px;
     background-color: #f9f9f9;
 
     h2 {

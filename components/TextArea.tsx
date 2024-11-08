@@ -6,6 +6,7 @@ const TextArea = ({
   rows,
   cols,
   value,
+  disabled,
   required,
   placeholder,
   name,
@@ -14,6 +15,7 @@ const TextArea = ({
   rows?: number,
   cols?: number,
   value: string,
+  disabled: boolean,
   required: boolean,
   placeholder: string,
   name: string,
@@ -31,6 +33,7 @@ const TextArea = ({
           rows={rows}
           cols={cols}
           required={required}
+          disabled={disabled}
           name={name}
           onChange={changeHandler}
           value={value}

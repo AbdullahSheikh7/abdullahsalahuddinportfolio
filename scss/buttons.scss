@@ -19,7 +19,7 @@
 
 .btn.btn-outline {
   border: 1px solid variables.$primary-color;
-  color: variables.$text-color-dark;
+  color: variables.$primary-color;
 
   &:hover {
     color: white;
@@ -30,6 +30,10 @@
 .btn.btn-filled {
   color: white;
   background-color: variables.$primary-color;
+
+  &:disabled {
+    background-color: lighten($color: variables.$primary-color, $amount: 20);
+  }
 
   &:hover {
     border: 1px solid variables.$primary-color;

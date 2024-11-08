@@ -5,6 +5,7 @@ const Input = ({
   onChange,
   type,
   value,
+  disabled,
   required,
   placeholder,
   name,
@@ -13,6 +14,7 @@ const Input = ({
   onChange: ChangeEventHandler,
   type: string,
   value: string,
+  disabled: boolean,
   required: boolean,
   placeholder: string,
   name: string,
@@ -31,6 +33,7 @@ const Input = ({
           required={required}
           type={type}
           name={name}
+          disabled={disabled}
           onChange={changeHandler}
           value={value}
         />

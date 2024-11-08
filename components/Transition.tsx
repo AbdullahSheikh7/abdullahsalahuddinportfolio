@@ -4,6 +4,7 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react"
 import Navbar from "@/components/Navbar";
 import TransitionContext from "@/contexts/TransitionContext"
 import ContextValue from "@/types/ContextValue"
+import { SnackbarProvider } from "notistack";
 
 const TransitionSVG = ({ setContextValue }: { setContextValue: React.Dispatch<React.SetStateAction<ContextValue>> }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -65,6 +66,7 @@ const TransitionDiv = ({
 
   return (
     <>
+    <SnackbarProvider>
       <TransitionContext.Provider value={contextValue}>
         <header>
           <Navbar />
@@ -72,6 +74,7 @@ const TransitionDiv = ({
         <TransitionSVG setContextValue={setContextValue} />
         {children}
       </TransitionContext.Provider>
+</SnackbarProvider>
     </>
   )
 }
