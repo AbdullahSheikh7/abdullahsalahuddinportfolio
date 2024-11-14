@@ -1,6 +1,6 @@
 import TransitionContext from "@/contexts/TransitionContext"
-import { useRouter } from "next/navigation"
-import { PropsWithChildren, useContext } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { PropsWithChildren, useContext, useEffect } from "react"
 
 const Link = ({ to, children }: { to:string } & PropsWithChildren) => {
   const transition = useContext(TransitionContext)
@@ -9,14 +9,24 @@ const Link = ({ to, children }: { to:string } & PropsWithChildren) => {
   const exit = transition?.exit
   const router = useRouter()
 
+  const currentPath = usePathname();
+
+  useEffect(() => {
+    if (exit) exit()
+  }, [currentPath]);
+
   const handleClick = () => {
-    if (play) play()
-    setTimeout(() => {
-      router.push(to)
-    }, 500);
-    setTimeout(() => {
-      if (exit) exit()
-    }, 1000);
+    const url = to.match(/#.*$/);
+    if (url && currentPath === to.replace(url[0], "")) {
+      router.push(url[0])
+    } else if (currentPath === to) {
+      return
+    } else {
+      if (play) play()
+      setTimeout(() => {
+        router.push(to)
+      }, 500);
+    }
   }
   return (
     <>

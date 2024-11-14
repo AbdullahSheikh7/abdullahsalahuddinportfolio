@@ -1,7 +1,34 @@
 import "@/scss/skills.scss"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import Image from "next/image"
 
 const Skills = () => {
+  useGSAP(
+    () => {
+      gsap.fromTo(".technologies div",
+        {
+          y: 100,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: {
+            each: 1,
+            from: "start",
+            grid: "auto",
+            amount: 0.5
+          },
+          scrollTrigger: {
+            trigger: ".technologies",
+            start: "top 75%",
+            once: true,
+          }
+        }
+      )
+    }
+  )
 
   return (
     <>

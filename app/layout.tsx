@@ -2,7 +2,7 @@ import "@/scss/index.scss"
 import "@/scss/buttons.scss"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import TransitionDiv from "@/components/Transition";
+import Transition from "@/components/Transition";
 import Footer from "@/components/Footer";
 
 const outfit = localFont({
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable}`}>
-        <TransitionDiv>
+        <Transition>
           {children}
-        </TransitionDiv>
+        </Transition>
         <footer>
           <Footer />
         </footer>

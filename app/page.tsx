@@ -14,24 +14,6 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   useGSAP(
     () => {
-      gsap.fromTo("#home",
-        {
-          y: 100,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.5,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: "#home",
-            start: "top 75%",
-            once: true,
-          }
-        },
-      )
-
       gsap.fromTo("#about",
         {
           y: 100,
@@ -69,6 +51,24 @@ export default function Home() {
       )
 
       gsap.fromTo("#work",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: "#work",
+            start: "top 75%",
+            once: true,
+          }
+        },
+      )
+
+      gsap.fromTo("#get-in-touch",
         {
           y: 100,
           opacity: 0,
