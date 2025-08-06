@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 19 91% 60%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 220 20% 8%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 15% 70%;
+
+    --accent: 19 91% 60%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 19 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Cyberpunk Design Tokens */
+    --cyber-orange: 19 91% 60%;
+    --cyber-cyan: 195 100% 50%;
+    --cyber-purple: 260 85% 65%;
+    --cyber-dark: 220 20% 8%;
+    --cyber-darker: 220 25% 6%;
+    --cyber-light: 220 15% 25%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 8%), hsl(220 25% 6%));
+    --gradient-cyber: linear-gradient(135deg, hsl(19 91% 60%), hsl(195 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(220 20% 10%), hsl(220 20% 12%));
+    
+    /* Shadows */
+    --shadow-cyber: 0 0 30px hsl(19 91% 60% / 0.3);
+    --shadow-glow: 0 0 50px hsl(195 100% 50% / 0.2);
+    --shadow-card: 0 10px 30px hsl(220 25% 6% / 0.5);
+    
+    /* Animations */
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep same as root since we're using dark theme by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-cyber-gradient {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .shadow-cyber {
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-cyber {
+    transition: var(--transition-cyber);
+  }
+  
+  .cyber-glow {
+    filter: drop-shadow(0 0 10px hsl(var(--cyber-orange) / 0.5));
+  }
+}
